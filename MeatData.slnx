@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MeatData.Api/MeatData.Api.csproj" />
+    <Project Path="src/MeatData.Application/MeatData.Application.csproj" />
+    <Project Path="src/MeatData.Domain/MeatData.Domain.csproj" />
+    <Project Path="src/MeatData.Infrastructure/MeatData.Infrastructure.csproj" />
+  </Folder>
+</Solution>
