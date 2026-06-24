@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MeatData.Domain.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -20,9 +21,9 @@ namespace MeatData.Domain.Entities
 
         public static Product Create(string name, string description, string sku, decimal weightGrams, Guid categoryId)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentException("Product name cannot be null or empty.", nameof(name));
+            if (string.IsNullOrEmpty(name)) throw new DomainException("Product name cannot be null or empty.");
 
-            if (weightGrams <= 0) throw new ArgumentException("Weight must be greater than zero.", nameof(weightGrams));
+            if (weightGrams <= 0) throw new DomainException("Weight must be greater than zero.");
 
             return new Product
             {
