@@ -12,6 +12,7 @@ namespace MeatData.Domain.Entities
         string Description { get; set; }
         AnimalCategory animalCategory { get; set; }
         DateTime CreatedAt { get; set; }
+        public ICollection<Product> Product { get; private set; }
 
         private ProductCategory() { }
     }

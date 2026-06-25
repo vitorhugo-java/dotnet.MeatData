@@ -14,6 +14,7 @@ namespace MeatData.Domain.Entities
         public string SKU { get; private set; }
         public decimal WeightGrams { get; private set; }
         public Guid CategoryId { get; private set; }
+        public ProductCategory Category { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime UpdatedAt { get; private set; }
 
