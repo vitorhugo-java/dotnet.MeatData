@@ -8,14 +8,14 @@ namespace MeatData.Domain.Entities
 {
     public class Product
     {
-        Guid Id { get; set; }
-        string Name { get; set; }
-        string? Description { get; set; }
-        string SKU { get; set; }
-        decimal WeightGrams { get; set; }
-        Guid CategoryId { get; set; }
-        DateTime CreatedAt { get; set; }
-        DateTime UpdatedAt { get; set; }
+        public Guid Id { get; private set; }
+        public string Name { get; private set; }
+        public string? Description { get; private set; }
+        public string SKU { get; private set; }
+        public decimal WeightGrams { get; private set; }
+        public Guid CategoryId { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public DateTime UpdatedAt { get; private set; }
 
         private Product() { }
 
