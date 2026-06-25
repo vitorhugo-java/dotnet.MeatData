@@ -10,7 +10,7 @@ namespace MeatData.Domain.Entities
     {
         Guid Id { get; set; }
         string Name { get; set; }
-        string Description { get; set; }
+        string? Description { get; set; }
         string SKU { get; set; }
         decimal WeightGrams { get; set; }
         Guid CategoryId { get; set; }
@@ -19,7 +19,7 @@ namespace MeatData.Domain.Entities
 
         private Product() { }
 
-        public static Product Create(string name, string description, string sku, decimal weightGrams, Guid categoryId)
+        public static Product Create(string name, string? description, string sku, decimal weightGrams, Guid categoryId)
         {
             if (string.IsNullOrEmpty(name)) throw new DomainException("Product name cannot be null or empty.");
 
