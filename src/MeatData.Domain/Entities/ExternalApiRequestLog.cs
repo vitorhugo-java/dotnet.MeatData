@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MeatData.Domain.Entities
 {
-    public class ExternalFoodMapping
+    public class ExternalApiRequestLog
     {
         Guid Id { get; set; }
         Guid ProductId { get; set; }
