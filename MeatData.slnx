@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+    <File Path="init.sql" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/MeatData.Api/MeatData.Api.csproj" />
     <Project Path="src/MeatData.Application/MeatData.Application.csproj" />
