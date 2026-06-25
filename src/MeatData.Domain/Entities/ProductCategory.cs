@@ -13,5 +13,6 @@ namespace MeatData.Domain.Entities
         AnimalCategory animalCategory { get; set; }
         DateTime CreatedAt { get; set; }
 
+        private ProductCategory() { }
     }
 }
