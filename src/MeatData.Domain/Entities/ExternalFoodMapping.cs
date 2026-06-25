@@ -6,12 +6,12 @@ namespace MeatData.Domain.Entities
 {
     public class ExternalFoodMapping
     {
-        Guid Id { get; set; }
-        Guid ProductId { get; set; }
-        string ExternalId { get; set; }
-        string ExternalSource { get; set; }
-        string SearchQuery { get; set; }
-        DateTime MappedAt { get; set; }
+        public Guid Id { get; private set; }
+        public Guid ProductId { get; private set; }
+        public string ExternalId { get; private set; }
+        public string ExternalSource { get; private set; }
+        public string SearchQuery { get; private set; }
+        public DateTime MappedAt { get; private set; }
 
         private ExternalFoodMapping() { }
     }
