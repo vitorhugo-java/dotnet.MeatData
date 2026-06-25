@@ -6,16 +6,16 @@ namespace MeatData.Domain.Entities
 {
     public class NutritionProfile
     {
-        Guid Id { get; set; }
-        Guid ProductId { get; set; }
-        string FdclId { get; set; }
-        decimal Calories { get; set; }
-        decimal ProteinGrams { get; set; }
-        decimal FatGrams { get; set; }
-        decimal CarbsGrams { get; set; }
-        decimal SodiumMg { get; set; }
-        DateTime FetchedAt { get; set; }
-        string Source { get; set; }
+        public Guid Id { get; private set; }
+        public Guid ProductId { get; private set; }
+        public string FdclId { get; private set; }
+        public decimal Calories { get; private set; }
+        public decimal ProteinGrams { get; private set; }
+        public decimal FatGrams { get; private set; }
+        public decimal CarbsGrams { get; private set; }
+        public decimal SodiumMg { get; private set; }
+        public DateTime FetchedAt { get; private set; }
+        public string Source { get; private set; }
 
         private NutritionProfile() { }
     }
