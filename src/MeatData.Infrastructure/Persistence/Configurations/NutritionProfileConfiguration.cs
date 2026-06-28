@@ -18,10 +18,10 @@ namespace MeatData.Infrastructure.Persistence.Configurations
             builder.Property(np => np.CarbsGrams).HasPrecision(10, 2);
             builder.Property(np => np.SodiumMg).HasPrecision(10, 2);
             builder.Property(np => np.Source).IsRequired().HasMaxLength(100);
-            builder.HasOne<Product>()
-                   .WithMany()
-                   .HasForeignKey(np => np.ProductId)
-                   .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(np => np.Product)
+               .WithOne(p => p.NutritionProfile)
+               .HasForeignKey<NutritionProfile>(np => np.ProductId)
+               .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

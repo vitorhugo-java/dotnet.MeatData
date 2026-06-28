@@ -16,6 +16,7 @@ namespace MeatData.Domain.Entities
         public decimal SodiumMg { get; private set; }
         public DateTime FetchedAt { get; private set; }
         public string Source { get; private set; }
+        public Product Product { get; private set; }
 
         private NutritionProfile() { }
     }
