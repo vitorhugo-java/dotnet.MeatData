@@ -16,10 +16,8 @@ namespace MeatData.Infrastructure.Persistence.Repositories
             _context = context;
         }
 
-        public Task AddAsync(Product product, CancellationToken ct = default)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task AddAsync(Product product, CancellationToken ct = default)
+            => await _context.Products.AddAsync(product, ct);
 
         public void Delete(Product product)
         {
