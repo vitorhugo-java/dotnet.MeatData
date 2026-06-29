@@ -9,4 +9,5 @@
     <Project Path="src/MeatData.Domain/MeatData.Domain.csproj" />
     <Project Path="src/MeatData.Infrastructure/MeatData.Infrastructure.csproj" />
   </Folder>
+  <Project Path="MeatDataPortal.Tests/MeatDataPortal.Tests.csproj" />
 </Solution>
