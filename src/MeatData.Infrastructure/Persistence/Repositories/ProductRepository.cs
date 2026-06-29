@@ -20,38 +20,38 @@ namespace MeatData.Infrastructure.Persistence.Repositories
             => await _context.Products.AddAsync(product, ct);
 
         public void Delete(Product product)
-        {
-            throw new NotImplementedException();
-        }
+            => _context.Products.Remove(product);
 
         public Task<bool> ExistsBySkuAsync(string sku, CancellationToken ct = default)
-        {
-            throw new NotImplementedException();
-        }
+            => _context.Products.AnyAsync(p => p.SKU == sku, ct);
 
-        public Task<IReadOnlyList<Product>> GetAllAsync(CancellationToken ct = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IReadOnlyList<Product>> GetByCategoryAsync(Guid categoryId, CancellationToken ct = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Product?> GetByIdAsync(Guid id, CancellationToken ct = default) 
+        public async Task<IReadOnlyList<Product>> GetAllAsync(CancellationToken ct = default)
             => await _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.NutritionProfile)
+                .AsNoTracking()
+                .ToListAsync(ct);
+
+        public async Task<IReadOnlyList<Product>> GetByCategoryAsync(Guid categoryId, CancellationToken ct = default)
+            => await _context.Products
+                .Where(p => p.CategoryId == categoryId)
+                .Include(p => p.Category)
+                .Include(p => p.NutritionProfile)
+                .AsNoTracking()
+                .ToListAsync(ct);
+
+        public async Task<Product?> GetByIdAsync(Guid id, CancellationToken ct = default)
+            => await _context.Products
+                .Include(p => p.Category)
                 .Include(p => p.NutritionProfile)
                 .FirstOrDefaultAsync(p => p.Id == id, ct);
 
-        public Task<Product?> GetBySkuAsync(string sku, CancellationToken ct = default)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Product?> GetBySkuAsync(string sku, CancellationToken ct = default)
+            => await _context.Products
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(p => p.SKU == sku, ct);
 
         public void Update(Product product)
-        {
-            throw new NotImplementedException();
-        }
+            => _context.Products.Update(product);
     }
 }
